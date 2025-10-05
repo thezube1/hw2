@@ -1,16 +1,16 @@
-products
+<products>
 book
 Data Abstraction & Problem Solving with C++
 79.99
 19
-Carrano and Henry
 978-013292372-9
+Carrano and Henry
 book
 Great Men and Women of Troy
 19.5
 5
-Tommy Trojan
 978-000000000-1
+Tommy Trojan
 clothing
 Men's Fitted Shirt
 39.99
@@ -29,7 +29,9 @@ Great Heights
 5
 and
 PG-13
-users
+</products>
+<users>
 rafsilva 20.01 0
 redekopp 50 1
 saty 120 1
+</users>

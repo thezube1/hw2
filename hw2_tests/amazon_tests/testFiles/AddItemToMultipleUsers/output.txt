@@ -11,21 +11,33 @@ Menu:
 ====================================
 
 Enter command: 
-No results found!
+Hit   1
+Hidden Figures DVD
+Genre: Drama Rating: PG
+17.990000 1 left.
+
 
 Enter command: 
-Invalid request
 
 Enter command: 
-No results found!
+Hit   1
+Hidden Figures DVD
+Genre: Drama Rating: PG
+17.990000 1 left.
+
 
 Enter command: 
-Invalid request
 
 Enter command: 
-Cart is empty
+Item 1
+Hidden Figures DVD
+Genre: Drama Rating: PG
+17.990000 1 left.
 
 Enter command: 
-Cart is empty
+Item 1
+Hidden Figures DVD
+Genre: Drama Rating: PG
+17.990000 1 left.
 
 Enter command: 

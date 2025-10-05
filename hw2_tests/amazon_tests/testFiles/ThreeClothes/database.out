@@ -1,4 +1,4 @@
-products
+<products>
 clothing
 Men's Fitted Shirt
 39.99
@@ -17,5 +17,7 @@ FRC Fan T-Shirt
 3
 7
 FIRST
-users
+</products>
+<users>
 user 10000 0
+</users>

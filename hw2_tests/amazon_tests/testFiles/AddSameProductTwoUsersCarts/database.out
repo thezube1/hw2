@@ -1,22 +1,22 @@
-products
+<products>
 book
 Data Abstraction & Problem Solving with C++
 79.99
 20
-Carrano and Henry
 978-013292372-9
+Carrano and Henry
 book
 Great Men and Women and Robot's of Troy
 19.5
 5
-Tommy Trojan
 978-000000000-1
+Tommy Trojan
 book
 00001010 00001111
 0.11
 5
-A. Robot
 111-000000000-1
+A. Robot
 movie
 Hidden Figures DVD
 17.99
@@ -29,7 +29,9 @@ Great Heights
 5
 and
 PG-13
-users
+</products>
+<users>
 rafsilva 100 0
 redekopp 50 1
 saty 120 1
+</users>

@@ -1,4 +1,4 @@
-products
+<products>
 movie
 FOO
 0.99
@@ -11,5 +11,7 @@ foo
 4
 Programming
 TV-14
-users
+</products>
+<users>
 user 1000 0
+</users>

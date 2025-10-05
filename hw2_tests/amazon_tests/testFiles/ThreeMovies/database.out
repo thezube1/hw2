@@ -1,4 +1,4 @@
-products
+<products>
 movie
 Hidden Figures DVD
 17.99
@@ -17,5 +17,7 @@ movie
 1000
 Neo-deconstructionalism
 G
-users
+</products>
+<users>
 user 10000 0
+</users>

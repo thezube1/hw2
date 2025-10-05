@@ -1,4 +1,4 @@
-products
+<products>
 movie
 Hidden Figures DVD
 17.99
@@ -11,5 +11,7 @@ Planet Earth VHS
 4
 Documentary
 PG
-users
+</products>
+<users>
 user 1000 0
+</users>
