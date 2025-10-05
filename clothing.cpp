@@ -8,7 +8,11 @@ Clothing::~Clothing() {
 }
 
 std::set<std::string> Clothing::keywords() const {
-    return std::set<std::string>({convToLower(size_), convToLower(brand_)});
+    std::set<std::string> keys = parseStringToWords(name_);
+    std::set<std::string> brandWords = parseStringToWords(brand_);
+    keys.insert(convToLower(size_));
+    keys.insert(brandWords.begin(), brandWords.end());
+    return keys;
 }
 
 bool Clothing::isMatch(std::vector<std::string>& searchTerms) const {

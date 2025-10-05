@@ -63,34 +63,36 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
     for (Product* p : currentSet) {
         results.push_back(p);
     }
-    
+
+    // Ensure a deterministic order that matches display (sorted by name)
+    std::sort(results.begin(), results.end(), [](Product* a, Product* b){
+        return a->getName() < b->getName();
+    });
+
     lastSearchResults_ = results;
     
     return results;
 }
 
 void MyDataStore::dump(std::ostream& ofile) {
-    ofile << "products" << std::endl;
+    ofile << "<products>" << std::endl;
     for (Product* p : products_) {
         p->dump(ofile);
     }
-    
-    ofile << "users" << std::endl;
+    ofile << "</products>" << std::endl;
+    ofile << "<users>" << std::endl;
     for (std::map<std::string, User*>::iterator it = users_.begin(); it != users_.end(); ++it) {
         it->second->dump(ofile);
     }
+    ofile << "</users>";
 }
 
 void MyDataStore::addToCart(const std::string& username, int hit_result_index) {
     std::string lowerUsername = convToLower(username);
     User* user = findUser(lowerUsername);
     
-    if (user == nullptr) {
-        std::cout << "Invalid username" << std::endl;
-        return;
-    }
-    
-    if (hit_result_index < 1 || hit_result_index > (int)lastSearchResults_.size()) {
+    // For ADD, any invalid condition (bad username or bad index) is an "Invalid request"
+    if (user == nullptr || hit_result_index < 1 || hit_result_index > (int)lastSearchResults_.size()) {
         std::cout << "Invalid request" << std::endl;
         return;
     }
@@ -122,7 +124,7 @@ void MyDataStore::viewCart(const std::string& username) {
         Product* p = tempQueue.front();
         tempQueue.pop();
         
-        std::cout << "Item " << index << ":" << std::endl;
+        std::cout << "Item " << index << std::endl;
         std::cout << p->displayString() << std::endl;
         index++;
     }

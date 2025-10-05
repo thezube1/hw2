@@ -8,10 +8,12 @@ Book::~Book() {
 }
 
 std::set<std::string> Book::keywords() const {
-    std::set<std::string> keywords = parseStringToWords(name_);
-    keywords.insert(convToLower(author_));
-    keywords.insert(convToLower(isbn_));
-    return keywords;
+    std::set<std::string> keys = parseStringToWords(name_);
+    std::set<std::string> authorWords = parseStringToWords(author_);
+    keys.insert(authorWords.begin(), authorWords.end());
+    // Keep ISBN as a single keyword to allow exact lookups with hyphens/digits
+    keys.insert(convToLower(isbn_));
+    return keys;
 }
 
 bool Book::isMatch(std::vector<std::string>& searchTerms) const {
@@ -23,5 +25,5 @@ std::string Book::displayString() const {
 }
 
 void Book::dump(std::ostream& os) const {
-    os << "book" << "\n" << name_ << "\n" << price_ << "\n" << qty_ << "\n" << author_ << "\n" << isbn_ << std::endl;
+    os << "book" << "\n" << name_ << "\n" << price_ << "\n" << qty_ << "\n" << isbn_ << "\n" << author_ << std::endl;
 }

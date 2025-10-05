@@ -8,7 +8,10 @@ Movie::~Movie() {
 }
 
 std::set<std::string> Movie::keywords() const {
-    return std::set<std::string>({convToLower(genre_), convToLower(rating_)});
+    std::set<std::string> keys = parseStringToWords(name_);
+    keys.insert(convToLower(genre_));
+    keys.insert(convToLower(rating_));
+    return keys;
 }
 
 bool Movie::isMatch(std::vector<std::string>& searchTerms) const {

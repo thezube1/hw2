@@ -17,18 +17,22 @@ std::set<std::string> parseStringToWords(string rawWords)
 {
     std::set<std::string> words;
 
-    string word = "";
-    
+    string token;
+    token.reserve(rawWords.size());
     for (size_t i = 0; i < rawWords.size(); i++) {
-        if (isalpha(rawWords[i])) {
-            word += rawWords[i];
-        }
-        else {
-            if (word.size() >= 2) {
-                words.insert(word);
+        char c = rawWords[i];
+        if (isalpha(c)) {
+            token.push_back(::tolower(c));
+        } else {
+            if (token.size() >= 2) {
+                words.insert(token);
             }
-            word = "";
+            token.clear();
         }
+    }
+    // flush final token
+    if (token.size() >= 2) {
+        words.insert(token);
     }
 
     return words;
